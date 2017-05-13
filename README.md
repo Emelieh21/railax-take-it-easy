@@ -1,6 +1,6 @@
 # Railax: Bringing Peace to Your Journey
 
-### Description
+## Description
 
 Sometimes, you want to enjoy a quit trip, and get some work done - or just have a siesta. But suddenly, it turns out a bunch that a bunch of noisy people jump in the train, and your peace is gone. The weekly football match attract all hooligans to the train. Wouldn't it be nice to know in advance what to expect from your trip? 
 
@@ -8,15 +8,17 @@ The goal of this project is to collect data from a sound sensor and implements i
 
 _This project is a result of the DB Mindbox Hackathon Berlin 12-13 May of 2017._
 
----
-
-### Idea architecture
+## Solution Architecture
 
 ### ![image](./assets/railax_architecture.jpg)
 
+## Business Presentation
 
+Freely available in [Google Slides](https://docs.google.com/presentation/d/1oejwr1haGwi5W9faB8-4qU1_rS6nwdFyooUE9Pdaowk/edit?usp=sharing).
 
-### Make a Mp3 go off when the noise goes wild
+## Technical Setup
+
+### Play a _"Please Be Quiet"_ Message when the Noise Level is Too High
 
 We want a pleasant voice to kindly remind people to keep their mouth shut. Luckily, there are many TTS (TextToSpeech) services online out there - and also free ones. I used [texttospeech](http://www.fromtexttospeech.com/) to create an audio file we could use.
 
@@ -24,7 +26,7 @@ Text English: _Dear Passengers, I would like to kindly remind you that this is a
 
 Text German: _Liebe Passagiere, ich möchte Sie freundlich daran erinnern, dass Sie sich in einem stillen Wagen befinden. Vielen dank für Ihre verständnis_.
 
-### Find a Python library to play mp3 with
+### Find a Python Library to Play MP3 Files
 
 ```python
 from pygame import mixer # Load the required library
@@ -34,11 +36,11 @@ mixer.music.load('D:/railax-take-it-easy/assets/SilentCoupe_Deutsch.mp3')
 mixer.music.play()
 ```
 
-Works! Just need to not forget to do music.load each time before playing (otherwise it does not work).
+It works! Just need to not forget to run `music.load` each time before playing (otherwise it does not work).
 
 ### Connect the sound sensor to the cloud with Wemos
 
-<To be added Jaime?>
+---DOCs IN PROGRESS---
 
 ### What is an average value? Inspect sound values in R
 
