@@ -63,6 +63,6 @@ To make it easy to work with the data in R via the [gtfsr library](https://githu
 * Add Arduino sketches for the noise sensor.
 * Add offline testing sketches as well.
 * Dump presentation in PDF.
-* Add Node-Red flow JSON.
+* Add how-to for the Node-RED dashboard.
 
 
