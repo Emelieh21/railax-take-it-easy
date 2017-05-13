@@ -50,7 +50,7 @@ It seems that the value does not often go over 600 (the original value we had in
 
 ![image](./assets/plot_sound_values.png)
 
-### Read the sound values in Python & launch the mp3 
+### Read the Sound values in Python & launch the mp3 
 
 In the [noise_mp3_reaction_python.py](noise_mp3_reaction_python.py) you can find the script that makes the mp3 go off every time the sound sensor hit a value over 400 more than three times.
 
@@ -58,5 +58,11 @@ In the [noise_mp3_reaction_python.py](noise_mp3_reaction_python.py) you can find
 
 To make it easy to work with the data in R via the [gtfsr library](https://github.com/ropensci/gtfsr) - we converted the Fahrplan API data for this month into GTFS data - with the help of [this python script](https://github.com/patrickbr/db-api-to-gtfs).
 
+## To-Do
+
+* Add Arduino sketches for the noise sensor.
+* Add offline testing sketches as well.
+* Dump presentation in PDF.
+* Add Node-Red flow JSON.
 
 
