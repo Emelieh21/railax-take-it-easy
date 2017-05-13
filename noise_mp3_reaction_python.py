@@ -23,7 +23,7 @@ while True:
 		soundStatus = response['readings'][0]['value']
 		#soundStatus = soundStatus + 1
 		print soundStatus
-		if soundStatus > 400:
+		if soundStatus > 300:
 			noise_count = noise_count + 1
 		if noise_count > 3:
 			print "Pssssht."
