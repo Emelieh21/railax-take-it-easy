@@ -14,7 +14,9 @@ _This project is a result of the DB Mindbox Hackathon Berlin 12-13 May of 2017._
 
 ## Business Presentation
 
-Freely available in [Google Slides](https://docs.google.com/presentation/d/1oejwr1haGwi5W9faB8-4qU1_rS6nwdFyooUE9Pdaowk/edit?usp=sharing).
+Available in [Google Slides](https://docs.google.com/presentation/d/1oejwr1haGwi5W9faB8-4qU1_rS6nwdFyooUE9Pdaowk/edit?usp=sharing) (**Chrome is recommended**; other browsers such as Safari may show format issues).
+
+A static PDF version can be downloaded [here](./assets/railax-biz-slides.pdf).
 
 ## Technical Setup
 
@@ -38,11 +40,11 @@ mixer.music.play()
 
 It works! Just need to not forget to run `music.load` each time before playing (otherwise it does not work).
 
-### Connect the sound sensor to the cloud with Wemos
+### Connect the Noise Sensor to the Cloud
 
----DOCs IN PROGRESS---
+---DOCS IN PROGRESS!---
 
-### What is an average value? Inspect sound values in R
+### What Is an Average Value? Inspect Sound Values in R
 
 We collected some live stream sound values from our sensor in R and explored the values.
 
@@ -50,11 +52,11 @@ It seems that the value does not often go over 600 (the original value we had in
 
 ![image](./assets/plot_sound_values.png)
 
-### Read the Sound values in Python & launch the mp3 
+### Read the Sound Values in Python & Play the MP3 File
 
 In the [noise_mp3_reaction_python.py](noise_mp3_reaction_python.py) you can find the script that makes the mp3 go off every time the sound sensor hit a value over 400 more than three times.
 
-### Convert DB API data to GTFS
+### Convert DB API Data to GTFS
 
 To make it easy to work with the data in R via the [gtfsr library](https://github.com/ropensci/gtfsr) - we converted the Fahrplan API data for this month into GTFS data - with the help of [this python script](https://github.com/patrickbr/db-api-to-gtfs).
 
@@ -62,7 +64,6 @@ To make it easy to work with the data in R via the [gtfsr library](https://githu
 
 * Add Arduino sketches for the noise sensor.
 * Add offline testing sketches as well.
-* Dump presentation in PDF.
 * Add how-to for the Node-RED dashboard.
 
 
