@@ -6,7 +6,7 @@ Sometimes, you want to enjoy a quit trip, and get some work done - or just have 
 
 The goal of this project is to collect data from a sound sensor and implements it with other (travel) data (weekday, time, segment, etc.) so eventually predictions can be made on how busy/quite your next trip will be. For this we want to use data from the Deutsche Bahn API, sound sensors (fora "real world" proof of concept), R (to process/represent data) and C/Adruino (electronics).
 
-_This project is a result of the DB Mindbox Hackathon Berlin 12-13 May of 2017._
+_This project was developed during the [DB Open Data Hackathon](https://www.mindboxberlin.com/index.php/db-hackathon-may-2017.html), which took place in the Mindbox facilities, in Berlin 12-13 May of 2017._
 
 ## Solution Architecture
 
@@ -14,9 +14,11 @@ _This project is a result of the DB Mindbox Hackathon Berlin 12-13 May of 2017._
 
 ## Business Presentation
 
-Available in [Google Slides](https://docs.google.com/presentation/d/1oejwr1haGwi5W9faB8-4qU1_rS6nwdFyooUE9Pdaowk/edit?usp=sharing) (**Chrome is recommended**; other browsers such as Safari may show format issues).
+The **presentation** is available in [Google Slides](https://docs.google.com/presentation/d/1oejwr1haGwi5W9faB8-4qU1_rS6nwdFyooUE9Pdaowk/edit?usp=sharing) (**Chrome is recommended**; other browsers such as Safari may show format issues).
 
-A static PDF version can be downloaded [here](./assets/railax-biz-slides.pdf).
+A static **PDF version** can be downloaded [here](./assets/railax-biz-slides.pdf).
+
+The additional pictures used in this presentation are available on [this Google Drive folder](https://drive.google.com/open?id=0B8B9qWtOwkjAS01FYlZyU1liUzg), in the `pics` directory.
 
 ## Technical Setup
 
