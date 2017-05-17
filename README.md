@@ -4,8 +4,6 @@
 
 _A fun weekend project by Emelie Hofland and Jaime González-Arintero. Created during the [DB Open Data Hackathon](https://www.mindboxberlin.com/index.php/db-hackathon-may-2017.html) in Berlin, on May 12-13, 2017._
 
-<Pictures and additional media of the **project presentation at the hackathon** can be found in [this folder](./hackathon).>
-
 ## Introduction
 
 Sometimes, you want to enjoy a quiet train trip, get some work done, read something, or chill. Or just have a _siesta_!
