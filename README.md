@@ -24,6 +24,17 @@ All the data was later processed and represented with [R](https://www.r-project.
 
 ### ![image](./assets/railax-architecture.jpg)
 
+The following modules are represented on the architectural diagram:
+
+* **Loudness sensor to acquire real-time noise values from the train**. A WiFi microcontroller takes care of sending such data to the cloud using the [MQTT](http://mqtt.org/faq) protocol.
+* **Speaker that plays a _"please be quiet"_ message** when the noise level on the train is too high.
+* **Script that converts the information** about the most up-to-date train lines from the Deutsche Bahn _Fahrplan API_ into GTFS.
+
+Additionally, these optional modules may be implemented, but are not represented on this diagram:
+
+* **Data selection and representation dashboard**, built in [Microsoft Power BI](https://powerbi.microsoft.com/en-us/).
+* **Real-time notifications and noise levels dashboard**, built in [Node-RED](https://nodered.org).
+
 ## Business Presentation
 
 The **presentation** is available in [Google Slides](https://docs.google.com/presentation/d/1oejwr1haGwi5W9faB8-4qU1_rS6nwdFyooUE9Pdaowk/edit?usp=sharing) (**Chrome is recommended**; other browsers such as Safari may show format issues).
@@ -34,25 +45,34 @@ The additional pictures used in this presentation are available on [this Google 
 
 ## Technical Setup
 
-### Play a _"Please Be Quiet"_ Message when the Noise Level is Too High
+### Generating a _"Please Be Quiet"_ Voice Message
 
-We want a pleasant voice to kindly remind people to keep their mouth shut. Luckily, there are many TTS (TextToSpeech) services online out there - and also free ones. I used [texttospeech](http://www.fromtexttospeech.com/) to create an audio file we could use.
+To inform the passengers that the loudness levels are too high, and kindly remind them to remain quiet, a voice notification will be played. Luckily, there are many TTS (Text To Speech) services online out there, including some free ones.
 
-Text English: _Dear Passengers, I would like to kindly remind you that this is a silent wagon._
+In this project, the service [texttospeech](http://www.fromtexttospeech.com/) was used in order to generate an audio file we could use. The transcription of such message can be found below:
 
-Text German: _Liebe Passagiere, ich möchte Sie freundlich daran erinnern, dass Sie sich in einem stillen Wagen befinden. Vielen dank für Ihre verständnis_.
+* **English version:** _Dear Passengers, I would like to kindly remind you that this is a silent wagon._
 
-### Find a Python Library to Play MP3 Files
+* **German version:** _Liebe Passagiere, ich möchte Sie freundlich daran erinnern, dass Sie sich in einem stillen Wagen befinden. Vielen dank für Ihre verständnis._
+
+### Playing the MP3 File Using Python
+
+For this purpose, the module `mixer` from `pygame` has been used in a Python script. The following code snipped loads such library, as well as the MP3 file, and it plays the file.
 
 ```python
-from pygame import mixer # Load the required library
+# Load the required library
+from pygame import mixer
 
 mixer.init()
-mixer.music.load('D:/railax-take-it-easy/assets/silent-coupe-deutsch.mp3')
+mixer.music.load('<PATH_TO_MP3_FILE>')
 mixer.music.play()
 ```
 
-It works! Just need to not forget to run `music.load` each time before playing (otherwise it does not work).
+Instead of `<PATH_TO_MP3_FILE>`, introduce the path to the chosen MP3 file (remember to add the file extension). For example, when this project was presented the script was executed in a Windows machine, and thus, the path was:   `D:/railax-take-it-easy/assets/silent-coupe-deutsch.mp3`
+
+**IMPORTANT:** Don't forget to run `mixer.music.load('<PATH_TO_MP3_FILE>')` each time before playing the file. Otherwise, the playback will not work.
+
+This excerpt will later be integrated in the complete script that reads the values from the loudness sensor, and reacts accordingly. But first we need to connect the sensor itself.
 
 ### Connect the Noise Sensor to the Cloud
 
@@ -62,17 +82,23 @@ To connect the noise / loudness sensor to the cloud, and start sendind real-time
 
 ### What Is an Average Value? Inspect Sound Values in R
 
+---DOCS IN PROGRESS!---
+
 We collected some live stream sound values from our sensor in R and explored the values.
 
 It seems that the value does not often go over 600 (the original value we had in mind to set as a trigger), even in a noisy room. Therefore we put the trigger now at 400. 
 
 ![image](./assets/plot-sound-values.png)
 
-### Read the Sound Values in Python & Play the MP3 File
+### Read the Noise Levels in Python & Play the MP3 File when They Get too High
+
+---DOCS IN PROGRESS!---
 
 In the [noise_mp3_reaction_python.py](noise_mp3_reaction_python.py) you can find the script that makes the mp3 go off every time the sound sensor hit a value over 400 more than three times.
 
 ### Convert DB API Data to GTFS
+
+---DOCS IN PROGRESS!---
 
 To make it easy to work with the data in R via the [gtfsr library](https://github.com/ropensci/gtfsr) - we converted the Fahrplan API data for this month into GTFS data - with the help of [this python script](https://github.com/patrickbr/db-api-to-gtfs).
 
@@ -81,6 +107,9 @@ To make it easy to work with the data in R via the [gtfsr library](https://githu
 * Add how-to for the sensor node.
 * Add offline testing sketches as well.
 * Add how-to for the Node-RED dashboard.
+* Add link to the GTFS wiki page on the Solution Architecture section.
+* Add links to the DB _Fahrplan API_.
+* Check the proper stylized name of _texttospeech_.
 
 ## License
 
