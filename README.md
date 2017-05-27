@@ -33,7 +33,7 @@ The following modules are represented on the architectural diagram:
 Additionally, these optional modules may be implemented, but are not represented on this diagram:
 
 * **Data selection and representation dashboard**, built in [Microsoft Power BI](https://powerbi.microsoft.com/en-us/).
-* **Real-time notifications and noise levels dashboard**, built in [Node-RED](https://nodered.org).
+* **Real-time notifications and noise level dashboard**, built in [Node-RED](https://nodered.org).
 
 ## Business Presentation
 
