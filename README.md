@@ -2,7 +2,7 @@
 
 ### By Team _Railax_
 
-_A fun weekend project by Emelie Hofland and Jaime González-Arintero. Created during the [DB Open Data Hackathon](https://www.mindboxberlin.com/index.php/db-hackathon-may-2017.html) in Berlin, on May 12-13, 2017._
+_A fun weekend project by Emelie Hofland and Jaime González-Arintero. Created during the [DB Open Data Hackathon](https://dbmindbox.com/db-opendata-hackathons/hackathons/hackathon-7-db-open-data-meets-jr-east/) in Berlin, on May 12-13, 2017._
 
 ## Introduction
 
